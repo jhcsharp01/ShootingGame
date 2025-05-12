@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 //발사대에 연결할 스크립트
 //발사 버튼을 눌렀을 경우 총알 발사
@@ -15,8 +16,18 @@ public class PlayerFire : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            var bullet = Instantiate(bulletFactory);
-            bullet.transform.position = firePosition.transform.position;
+            Shoot();
         }
     }
+    
+    void Shoot()
+    {
+        var bullet = Instantiate(bulletFactory);
+        bullet.transform.position = firePosition.transform.position;
+    }
+
+
+
+
+ 
 }
