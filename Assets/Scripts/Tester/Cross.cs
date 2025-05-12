@@ -2,15 +2,27 @@ using UnityEngine;
 
 public class Cross : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject prefab;
 
-    // Update is called once per frame
-    void Update()
+    public int length;
+    public float space = 1.0f;
+
+    private void Start()
     {
-        
+
+        for (int i = -length; i <= length; i++)
+        {
+            Vector3 pos = transform.position + new Vector3(i * space, 0, 0);
+            var go = Instantiate(prefab, pos, Quaternion.identity);
+            go.transform.parent = transform;
+        }
+
+        for (int i = -length; i <= length; i++)
+        {
+            Vector3 pos = transform.position + new Vector3(0, i * space,0);
+            var go = Instantiate(prefab, pos, Quaternion.identity);
+            go.transform.parent = transform;
+        }
+
     }
 }
