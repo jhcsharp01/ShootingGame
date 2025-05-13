@@ -594,7 +594,7 @@ GameObject:
   - component: {fileID: 1147171212}
   - component: {fileID: 1147171211}
   m_Layer: 5
-  m_Name: Button (Legacy)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1298,12 +1298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3b1ef56d245b904f9e423a47a076d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectCharacter: {fileID: 0}
-  prefab: {fileID: 0}
-  Texture2D: []
-  characterType: 0
-  LButton: {fileID: 0}
-  RButton: {fileID: 0}
 --- !u!1 &1987251102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1987251104}
-  - component: {fileID: 1987251103}
+  - component: {fileID: 1987251105}
   m_Layer: 0
   m_Name: CharacterSelect
   m_TagString: Untagged
@@ -1321,28 +1315,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1987251103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987251102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3b1ef56d245b904f9e423a47a076d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectCharacter: {fileID: 3981115801959966369}
-  prefab: {fileID: 5032589932156730969, guid: 7e363014152fb624aa7113ba915f0e5a, type: 3}
-  Texture2D:
-  - {fileID: 2800000, guid: af4e2cc37395ac040a13828c0a5e95f6, type: 3}
-  - {fileID: 2800000, guid: 7dc43b82c63c4b043b5452b1f4b51343, type: 3}
-  - {fileID: 2800000, guid: a0dfee275716dc4419c5a2f428fdbe81, type: 3}
-  - {fileID: 2800000, guid: ecb33937f3418cb4cb8734e25d49d578, type: 3}
-  characterType: 0
-  LButton: {fileID: 1574999585}
-  RButton: {fileID: 1379246778}
 --- !u!4 &1987251104
 Transform:
   m_ObjectHideFlags: 0
@@ -1358,6 +1330,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1987251105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987251102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00817b889a85c840941aeb74426e74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterMaterial: {fileID: 2100000, guid: 90c377c6c6ca55b448e49ee073d37ed7, type: 2}
+  textures:
+  - {fileID: 2800000, guid: af4e2cc37395ac040a13828c0a5e95f6, type: 3}
+  - {fileID: 2800000, guid: 7dc43b82c63c4b043b5452b1f4b51343, type: 3}
+  - {fileID: 2800000, guid: a0dfee275716dc4419c5a2f428fdbe81, type: 3}
+  - {fileID: 2800000, guid: ecb33937f3418cb4cb8734e25d49d578, type: 3}
+  SelectCharacter: {fileID: 2868537568067749398}
+  LButton: {fileID: 1574999587}
+  RButton: {fileID: 1379246780}
+  CButton: {fileID: 1147171211}
 --- !u!4 &678650570700623181
 Transform:
   m_ObjectHideFlags: 0
