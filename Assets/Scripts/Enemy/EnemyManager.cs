@@ -4,9 +4,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     float currentTime; //현재 시간
-
     public float step = 1;//시간 간격
-
     public GameObject enemyFactory; //적 공장
 
     private void Update()

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+   
     public float speed = 5;
     public GameObject effect; //¿Ã∆Â∆Æ µÓ∑œ
 
@@ -41,7 +42,6 @@ public class Enemy : MonoBehaviour
     {
         var explosion = Instantiate(effect);
         explosion.transform.position = transform.position;
-
         Destroy(collision.gameObject);
         Destroy(gameObject);
     }
