@@ -9,6 +9,11 @@ public class Background : MonoBehaviour
 
     public float speed = 0.2f;
 
+    private void Start()
+    {
+        
+    }
+
     private void Update()
     {
         //방향 위 고정

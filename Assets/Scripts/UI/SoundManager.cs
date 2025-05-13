@@ -84,6 +84,9 @@ public class SoundManager : MonoBehaviour
     }
 
 
+
+
+
     //1. UI의 BGM, SFX 트는 기능 구현
 
     //2. UI의 Slider의 onValueChanged 이벤트 쪽에서 적용할 함수 구현
