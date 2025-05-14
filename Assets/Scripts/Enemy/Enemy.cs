@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -6,12 +7,20 @@ public class Enemy : MonoBehaviour
     public float speed = 5;
     public GameObject effect; //이펙트 등록
 
+    public Action onDead;
+
     Vector3 dir; //움직일 방향
     
+    public void Die()
+    {
+        onDead?.Invoke();
+        gameObject.SetActive(false);
+    }
+
 
     private void OnEnable()
     {
-        int randValue = Random.Range(0, 10); // 0 ~ 9
+        int randValue = UnityEngine.Random.Range(0, 10); // 0 ~ 9
         //플레이어 방향으로 이동
         if (randValue < 3) // 0 1 2
         {
@@ -56,9 +65,11 @@ public class Enemy : MonoBehaviour
             //플레이어도 비활성화로 처리할거면 거기에 맞게 수정할 것
             //Destroy(collision.gameObject);
             Debug.Log("Test");
-        }
-        gameObject.SetActive(false);
+            Die();
+        }    
+        //Die();
         
+ 
     }
 
     //충돌 끝
