@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 //유닛 1개 생성기
@@ -34,16 +35,23 @@ public class EnemyManager : MonoBehaviour
 
     }
 
-
     private void Update()
     {
         currentTime += Time.deltaTime;
 
         if(currentTime > step)
         {
-            var enemy = Instantiate(enemyFactory);
-            enemy.transform.position = transform.position;
-            enemy.transform.parent = transform;
+            for(int i =0; i < poolSize; i++)
+            {
+                var enemy = pool[i];
+                if (enemy.activeSelf == false)
+                {
+                    enemy.transform.position = spawnPoint[i].position;
+                    enemy.SetActive(true);
+                    enemy.transform.parent = transform;
+                    break;
+                }
+            }
             currentTime = 0;
         }
     }

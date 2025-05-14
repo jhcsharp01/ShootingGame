@@ -7,8 +7,9 @@ public class Enemy : MonoBehaviour
     public GameObject effect; //이펙트 등록
 
     Vector3 dir; //움직일 방향
+    
 
-    private void Start()
+    private void OnEnable()
     {
         int randValue = Random.Range(0, 10); // 0 ~ 9
         //플레이어 방향으로 이동
@@ -52,9 +53,11 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Destroy(collision.gameObject);
+            //플레이어도 비활성화로 처리할거면 거기에 맞게 수정할 것
+            //Destroy(collision.gameObject);
+            Debug.Log("Test");
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
         
     }
 
