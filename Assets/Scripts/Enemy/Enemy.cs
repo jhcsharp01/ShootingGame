@@ -42,8 +42,20 @@ public class Enemy : MonoBehaviour
     {
         var explosion = Instantiate(effect);
         explosion.transform.position = transform.position;
-        Destroy(collision.gameObject);
+        
+        // 충돌체의 이름에 Bullet이 포함된다면?
+        // 태그나 레이어로 조사해도 괜찮음.
+        if(collision.gameObject.name.Contains("Bullet"))
+        {
+            //충돌체에 대한 비활성화
+            collision.gameObject.SetActive(false);
+        }
+        else
+        {
+            Destroy(collision.gameObject);
+        }
         Destroy(gameObject);
+        
     }
 
     //충돌 끝
